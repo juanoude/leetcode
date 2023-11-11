@@ -1,6 +1,8 @@
-func twoSum(nums []int, target int) []int {
+package algorithms
+
+func TwoSum(nums []int, target int) []int {
 	for i, _ := range nums {
-		success, sumIndex := loopOtherNums(i, nums, target)
+		success, sumIndex := LoopOtherNums(i, nums, target)
 		if success {
 			return []int{i, sumIndex}
 		}
@@ -10,7 +12,7 @@ func twoSum(nums []int, target int) []int {
 
 }
 
-func loopOtherNums(currentIndex int, nums []int, target int) (bool, int) {
+func LoopOtherNums(currentIndex int, nums []int, target int) (bool, int) {
 	currentNum := nums[currentIndex]
 
 	for i := currentIndex + 1; i < len(nums); i++ {
@@ -41,8 +43,6 @@ func loopOtherNums(currentIndex int, nums []int, target int) (bool, int) {
 // Example 3:
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
-
- 
 
 // Constraints:
 //     2 <= nums.length <= 104

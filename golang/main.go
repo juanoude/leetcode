@@ -6,5 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(algorithms.TwoSum([]int{2, 7, 11, 15}, 9))
+	arg := "()"
+	result := algorithms.IsValidParentheses(arg)
+	fmt.Println(result)
 }

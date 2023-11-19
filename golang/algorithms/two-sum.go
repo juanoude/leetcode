@@ -1,7 +1,7 @@
 package algorithms
 
 func TwoSum(nums []int, target int) []int {
-	for i, _ := range nums {
+	for i := range nums {
 		success, sumIndex := LoopOtherNums(i, nums, target)
 		if success {
 			return []int{i, sumIndex}

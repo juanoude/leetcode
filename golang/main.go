@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	arg := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
-	result := algorithms.RemoveDuplicates(arg)
+	arg := []int{3, 2, 2, 3}
+	result := algorithms.RemoveElement(arg, 3)
 	fmt.Println(result)
 	fmt.Println(arg)
 }

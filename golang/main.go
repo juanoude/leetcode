@@ -6,8 +6,13 @@ import (
 )
 
 func main() {
-	arg := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
-	result := algorithms.RemoveDuplicates(arg)
+	arg := [][]byte{
+		{1, 1, 0, 0},
+		{1, 1, 0, 0},
+		{0, 0, 1, 0},
+		{0, 0, 0, 1},
+	}
+	result := algorithms.NumberOfIslands(arg)
 	fmt.Println(result)
 	fmt.Println(arg)
 }

@@ -6,13 +6,10 @@ import (
 )
 
 func main() {
-	arg := [][]byte{
-		{1, 1, 0, 0},
-		{1, 1, 0, 0},
-		{0, 0, 1, 0},
-		{0, 0, 0, 1},
-	}
-	result := algorithms.NumberOfIslands(arg)
-	fmt.Println(result)
+	arg := []int{2, 3, 5}
+	arg2 := [][]int{{4, 8}, {2, 8}}
+	result := algorithms.MinimumSpaceWastedFromPacking(arg, arg2)
 	fmt.Println(arg)
+	fmt.Println(arg2)
+	fmt.Println(result)
 }

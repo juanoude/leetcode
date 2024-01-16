@@ -27,10 +27,10 @@ func MinimumSpaceWastedFromPacking(packages []int, boxes [][]int) int {
 		alreadyPackedBoxesIndex := 0
 		for _, boxSize := range box {
 			cutIndex := binarySearch(packages, boxSize)
-			packagesInsideBoxSizeCount := cutIndex - alreadyPackedBoxesIndex
+			packagesInsideBoxSizeCount := cutIndex - alreadyPackedBoxesIndex + 1
 			currentWaste += packagesInsideBoxSizeCount * boxSize
-			currentWaste -= cumulativeSizes[cutIndex+1] - cumulativeSizes[alreadyPackedBoxesIndex+1]
-			alreadyPackedBoxesIndex = cutIndex
+			currentWaste -= cumulativeSizes[cutIndex+1] - cumulativeSizes[alreadyPackedBoxesIndex]
+			alreadyPackedBoxesIndex = cutIndex + 1
 		}
 		ans = min(ans, currentWaste)
 	}

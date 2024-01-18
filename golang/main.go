@@ -6,10 +6,8 @@ import (
 )
 
 func main() {
-	arg := []int{2, 3, 5}
-	arg2 := [][]int{{4, 8}, {2, 8}}
-	result := algorithms.MinimumSpaceWastedFromPacking(arg, arg2)
-	fmt.Println(arg)
-	fmt.Println(arg2)
+	arg := 160000
+	result := algorithms.ClimbStairs(arg)
+	// fmt.Println(arg)
 	fmt.Println(result)
 }

@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	arg := 160000
-	result := algorithms.ClimbStairs(arg)
+	arg := []int{-1, 1}
+	result := algorithms.ThreeSum(arg)
 	// fmt.Println(arg)
 	fmt.Println(result)
 }

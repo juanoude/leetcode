@@ -24,7 +24,13 @@ func main() {
 		Right: &arg3,
 	}
 
-	result := algorithms.MaxDepth(&arg)
+	arg4 := algorithms.TreeNode{
+		Val:   20,
+		Left:  nil,
+		Right: nil,
+	}
+
+	result := algorithms.IsSameTree(&arg, &arg4)
 	// fmt.Println(arg)
 	fmt.Println(result)
 }

@@ -6,46 +6,55 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-var levelsMap = make(map[int][]*TreeNode)
-
 func MaxDepth(root *TreeNode) int {
-	maxDepth := 0
-	levelsMap[maxDepth] = []*TreeNode{root}
-
 	if root == nil {
 		return 0
 	}
 
-	hasDeeperLevel := root.Left != nil || root.Right != nil
-	if !hasDeeperLevel {
-		return 1
-	}
-
-	for hasDeeperLevel {
-		maxDepth++
-		hasDeeperLevel, levelsMap[maxDepth] = exploreNodes(levelsMap[maxDepth-1])
-	}
-
-	return maxDepth
+	return 1 + max(MaxDepth(root.Left), MaxDepth(root.Right))
 }
 
-func exploreNodes(levelNodes []*TreeNode) (bool, []*TreeNode) {
-	var nextLevelNodes []*TreeNode
-	var hasNextLevel bool
-	for _, node := range levelNodes {
-		if node.Left != nil {
-			nextLevelNodes = append(nextLevelNodes, node.Left)
-			hasNextLevel = true
-		}
+// First attempt - Space Complexity O(n)
+// var levelsMap = make(map[int][]*TreeNode)
 
-		if node.Right != nil {
-			nextLevelNodes = append(nextLevelNodes, node.Right)
-			hasNextLevel = true
-		}
-	}
+// func MaxDepth(root *TreeNode) int {
+// 	maxDepth := 0
+// 	levelsMap[maxDepth] = []*TreeNode{root}
 
-	return hasNextLevel, nextLevelNodes
-}
+// 	if root == nil {
+// 		return 0
+// 	}
+
+// 	hasDeeperLevel := root.Left != nil || root.Right != nil
+// 	if !hasDeeperLevel {
+// 		return 1
+// 	}
+
+// 	for hasDeeperLevel {
+// 		maxDepth++
+// 		hasDeeperLevel, levelsMap[maxDepth] = exploreNodes(levelsMap[maxDepth-1])
+// 	}
+
+// 	return maxDepth
+// }
+
+// func exploreNodes(levelNodes []*TreeNode) (bool, []*TreeNode) {
+// 	var nextLevelNodes []*TreeNode
+// 	var hasNextLevel bool
+// 	for _, node := range levelNodes {
+// 		if node.Left != nil {
+// 			nextLevelNodes = append(nextLevelNodes, node.Left)
+// 			hasNextLevel = true
+// 		}
+
+// 		if node.Right != nil {
+// 			nextLevelNodes = append(nextLevelNodes, node.Right)
+// 			hasNextLevel = true
+// 		}
+// 	}
+
+// 	return hasNextLevel, nextLevelNodes
+// }
 
 // Given the root of a binary tree, return its maximum depth.
 // A binary tree's maximum depth is the number of nodes along

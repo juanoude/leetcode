@@ -24,7 +24,7 @@ func main() {
 		Right: &arg3,
 	}
 
-	result := algorithms.InvertTree(&arg)
+	result := algorithms.IsSymmetric(&arg)
 	// fmt.Println(arg)
-	fmt.Printf("result: %+v", result.Left.Val)
+	fmt.Printf("result: %+v", result)
 }

@@ -24,13 +24,7 @@ func main() {
 		Right: &arg3,
 	}
 
-	arg4 := algorithms.TreeNode{
-		Val:   20,
-		Left:  nil,
-		Right: nil,
-	}
-
-	result := algorithms.IsSameTree(&arg, &arg4)
+	result := algorithms.InvertTree(&arg)
 	// fmt.Println(arg)
-	fmt.Println(result)
+	fmt.Printf("result: %+v", result.Left.Val)
 }

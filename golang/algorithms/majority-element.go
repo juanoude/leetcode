@@ -3,6 +3,8 @@ package algorithms
 func MajorityElement(nums []int) int {
 	var numCounts map[int]int = map[int]int{}
 	for _, num := range nums {
+		// you don't need to safelly init the map key like other languages
+		// a new key is automatically 0 in this case
 		numCounts[num]++
 		if numCounts[num] > len(nums)/2 {
 			return num

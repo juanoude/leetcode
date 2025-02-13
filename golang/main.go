@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arg := []int{-1, 0, 0, 3, 3, 3, 3, 3}
-	result := algorithms.MajorityElement(arg)
+	arg := " asdasd df f"
+	result := algorithms.ReverseWords(arg)
 	fmt.Println(result)
 }

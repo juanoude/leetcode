@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arg := " asdasd df f"
-	result := algorithms.ReverseWords(arg)
+	arg := []int{1, 3, 5, 6, 8, 9}
+	result := algorithms.ProductExceptSelf(arg)
 	fmt.Println(result)
 }

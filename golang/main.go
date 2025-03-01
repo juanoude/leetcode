@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arg := []int{1, 3, 5, 6, 8, 9}
-	result := algorithms.ProductExceptSelf(arg)
+	arg := []int{1, 2, 0, 1, 0, -1, -3, 3}
+	result := algorithms.IncreasingTripletV2(arg)
 	fmt.Println(result)
 }
